@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Sips — Love at first sip.</title>
+<meta name="description" content="Coffee, matcha, boba, and mojitos, made fresh and poured to order across two October branches.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- progress bar -->
+<div class="scroll-progress" aria-hidden="true"><span id="scrollBar"></span></div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="Daily Sips home">
+      <img src="assets/logo.png" alt="Daily Sips" class="brand-logo">
+    </a>
+
+    <nav class="main-nav" aria-label="Primary">
+      <div class="nav-item has-dropdown">
+        <button class="nav-link" id="sipsTrigger" aria-expanded="false">Sips
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="dropdown" id="sipsDropdown">
+          <a href="#menu" data-filter="Signature Sips">Signature Sips</a>
+          <a href="#menu" data-filter="Matcha">Matcha</a>
+          <a href="#menu" data-filter="Boba">Boba</a>
+          <a href="#menu" data-filter="Coffee">Coffee</a>
+          <a href="#menu" data-filter="Mojitos">Mojitos</a>
+        </div>
+      </div>
+      <a href="#menu" class="nav-link">Menu</a>
+      <a href="#branches" class="nav-link">Branches</a>
+      <a href="#feed" class="nav-link">Instagram</a>
+    </nav>
+
+    <a href="#order" class="btn btn-dark btn-order">
+      Order Now
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4H6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 6h18M16 10a4 4 0 01-8 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </a>
+
+    <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-top">
+    <img src="assets/logo.png" alt="Daily Sips" class="brand-logo">
+    <button class="hamburger is-open" id="mobileCloseBtn" aria-label="Close menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="#menu" class="mobile-link"><span>01</span>Sips</a>
+    <a href="#menu" class="mobile-link"><span>02</span>Menu</a>
+    <a href="#branches" class="mobile-link"><span>03</span>Branches</a>
+    <a href="#feed" class="mobile-link"><span>04</span>Instagram</a>
+  </nav>
+  <a href="#order" class="btn btn-cream mobile-order">Order Now</a>
+  <div class="mobile-menu-foot">Alfardous, October — Golf Corner, October Gardens</div>
+</div>
+<div class="mobile-overlay" id="mobileOverlay"></div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-eyebrow" data-reveal>ALFARDOUS &middot; OCTOBER —<br>GOLF CORNER &middot; OCTOBER GARDENS</p>
+      <h1 class="hero-headline">
+        <span class="line" data-reveal-line>Love at</span>
+        <span class="line" data-reveal-line><em>first</em> sip.</span>
+      </h1>
+      <p class="hero-sub" data-reveal>Coffee, matcha, boba, and mojitos, made fresh and poured to order across two October branches.</p>
+      <div class="hero-ctas" data-reveal>
+        <a href="#menu" class="btn btn-dark">Explore the Menu
+          <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#branches" class="btn btn-outline">Find a Branch
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-13a7 7 0 10-14 0c0 5.42 7 13 7 13z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="hero-badge" id="heroBadge">
+        <span class="hero-badge-eyebrow">SIGNATURE</span>
+        <span class="hero-badge-name">Matcha<br>Salted<br>Caramel</span>
+        <span class="hero-badge-rule"></span>
+      </div>
+      <div class="hero-cup-wrap" id="heroCupWrap">
+        <img src="assets/hero-cup.png" alt="Iced Matcha Salted Caramel from Daily Sips" class="hero-cup-img" id="heroCupImg">
+      </div>
+      <div class="hero-leaf hero-leaf-1" aria-hidden="true"></div>
+      <div class="hero-leaf hero-leaf-2" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div class="hero-dots" aria-hidden="true">
+    <span class="active"></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- ===================== SIGNATURE SIPS ===================== -->
+<section class="signature" id="signature">
+  <div class="signature-inner">
+    <div class="signature-head">
+      <p class="eyebrow eyebrow-light" data-reveal>SIGNATURE SIPS</p>
+      <h2 class="signature-title" data-reveal>Our favorites,<br><em>made daily.</em></h2>
+      <a href="#menu" class="text-link text-link-light" data-reveal>Explore all drinks
+        <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="drink-row" id="drinkRow">
+      <article class="drink-card" data-reveal-card>
+        <div class="drink-card-img"><img src="assets/drink-caramel-cream.png" alt="Caramel Cream Latte" loading="lazy"></div>
+        <div class="drink-card-info">
+          <div>
+            <h3>Caramel<br>Cream Latte</h3>
+            <span class="drink-price">140 L.E</span>
+          </div>
+          <button class="drink-arrow" aria-label="View Caramel Cream Latte">
+            <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span class="drink-hover-tag">View Drink</span>
+      </article>
+
+      <article class="drink-card" data-reveal-card>
+        <div class="drink-card-img"><img src="assets/drink-iced-salted.png" alt="Iced Salted Caramel" loading="lazy"></div>
+        <div class="drink-card-info">
+          <div>
+            <h3>Iced Salted<br>Caramel</h3>
+            <span class="drink-price">135 L.E</span>
+          </div>
+          <button class="drink-arrow" aria-label="View Iced Salted Caramel">
+            <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span class="drink-hover-tag">View Drink</span>
+      </article>
+
+      <article class="drink-card" data-reveal-card>
+        <div class="drink-card-img"><img src="assets/drink-tropical-matcha.png" alt="Tropical Matcha" loading="lazy"></div>
+        <div class="drink-card-info">
+          <div>
+            <h3>Tropical<br>Matcha</h3>
+            <span class="drink-price">125 L.E</span>
+          </div>
+          <button class="drink-arrow" aria-label="View Tropical Matcha">
+            <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span class="drink-hover-tag">View Drink</span>
+      </article>
+
+      <article class="drink-card" data-reveal-card>
+        <div class="drink-card-img"><img src="assets/drink-matcha-salted.png" alt="Matcha Salted Caramel" loading="lazy"></div>
+        <div class="drink-card-info">
+          <div>
+            <h3>Matcha Salted<br>Caramel</h3>
+            <span class="drink-price">145 L.E</span>
+          </div>
+          <button class="drink-arrow" aria-label="View Matcha Salted Caramel">
+            <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span class="drink-hover-tag">View Drink</span>
+      </article>
+
+      <article class="drink-card" data-reveal-card>
+        <div class="drink-card-img"><img src="assets/drink-taro-boba.png" alt="Taro Boba" loading="lazy"></div>
+        <div class="drink-card-info">
+          <div>
+            <h3>Taro<br>Boba</h3>
+            <span class="drink-price">130 L.E</span>
+          </div>
+          <button class="drink-arrow" aria-label="View Taro Boba">
+            <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+        <span class="drink-hover-tag">View Drink</span>
+      </article>
+    </div>
+    <button class="row-nav row-nav-next" id="rowNext" aria-label="Scroll drinks right">
+      <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ===================== MENU ===================== -->
+<section class="menu" id="menu">
+  <div class="menu-inner">
+    <div class="menu-head" data-reveal>
+      <p class="eyebrow">EVERYTHING ON THE COUNTER</p>
+      <h2 class="menu-title">Explore<br><em>the menu.</em></h2>
+      <p class="menu-note">Prices in L.E, inclusive of 14% VAT.<br>Two numbers where a drink comes in two sizes.</p>
+    </div>
+
+    <div class="menu-panel">
+      <div class="menu-tabs" id="menuTabs" role="tablist">
+        <button class="tab active" data-cat="Signature Sips">Signature Sips</button>
+        <button class="tab" data-cat="Coffee">Coffee</button>
+        <button class="tab" data-cat="Frappe">Frappe</button>
+        <button class="tab" data-cat="Mojitos">Mojitos</button>
+        <button class="tab" data-cat="Boba">Boba</button>
+        <button class="tab" data-cat="Matcha">Matcha</button>
+        <button class="tab" data-cat="Shakes">Shakes</button>
+        <button class="tab" data-cat="Hot Drinks">Hot Drinks</button>
+      </div>
+
+      <div class="menu-list" id="menuList"></div>
+
+      <a href="#" class="text-link menu-view-all" data-reveal>View full menu
+        <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5.5H14M14 5.5L9.5 1M14 5.5L9.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BRANCHES ===================== -->
+<section class="branches" id="branches">
+  <div class="branches-inner">
+    <div class="branches-head">
+      <p class="eyebrow eyebrow-light" data-reveal>FIND YOUR SIPS</p>
+      <h2 class="branches-title" data-reveal>Two branches,<br><em>same obsession.</em></h2>
+    </div>
+
+    <div class="branch-cards">
+      <article class="branch-card" data-reveal-card>
+        <span class="branch-pin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-13a7 7 0 10-14 0c0 5.42 7 13 7 13z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <p class="branch-label">BRANCH 01</p>
+        <h3 class="branch-name">Alfardous</h3>
+        <p class="branch-area">October</p>
+        <div class="branch-actions">
+          <a href="#" class="btn btn-dark btn-sm">Directions</a>
+          <a href="#menu" class="btn btn-outline btn-sm">View Menu</a>
+        </div>
+      </article>
+
+      <article class="branch-card" data-reveal-card>
+        <span class="branch-pin">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-7.58 7-13a7 7 0 10-14 0c0 5.42 7 13 7 13z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6"/></svg>
+        </span>
+        <p class="branch-label">BRANCH 02</p>
+        <h3 class="branch-name">Golf Corner</h3>
+        <p class="branch-area">October Gardens</p>
+        <div class="branch-actions">
+          <a href="#" class="btn btn-dark btn-sm">Directions</a>
+          <a href="#menu" class="btn btn-outline btn-sm">View Menu</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== INSTAGRAM FEED ===================== -->
+<section class="feed" id="feed">
+  <div class="feed-inner">
+    <div class="feed-head" data-reveal>
+      <p class="eyebrow">@DAILYSIPS</p>
+      <h2 class="feed-title">Every flavor,<br><em>in feed.</em></h2>
+    </div>
+
+    <div class="feed-grid" id="feedGrid">
+      <div class="feed-photo" data-reveal-card><img src="assets/insta-1.png" alt="Strawberry drink from Daily Sips" loading="lazy"></div>
+      <div class="feed-photo" data-reveal-card><img src="assets/insta-2.png" alt="Matcha drink from Daily Sips" loading="lazy"></div>
+      <div class="feed-photo" data-reveal-card><img src="assets/insta-3.png" alt="Taro drink from Daily Sips" loading="lazy"></div>
+      <div class="feed-photo" data-reveal-card><img src="assets/insta-4.png" alt="Mango drink from Daily Sips" loading="lazy"></div>
+      <div class="feed-photo" data-reveal-card><img src="assets/insta-5.png" alt="Chocolate drink from Daily Sips" loading="lazy"></div>
+      <div class="feed-photo" data-reveal-card><img src="assets/insta-6.png" alt="Berry drink from Daily Sips" loading="lazy"></div>
+    </div>
+
+    <div class="feed-side" data-reveal>
+      <p>New drops, restocks, and the odd flavor test — posted before it hits the counter.</p>
+      <a href="#" class="btn btn-dark">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        Follow @dailysips
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="order">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="assets/logo.png" alt="Daily Sips" class="brand-logo footer-logo">
+      <p>Coffee, matcha, boba, and mojitos made fresh and poured to order.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="#top">Sips</a>
+      <a href="#menu">Menu</a>
+      <a href="#branches">Branches</a>
+      <a href="#order">Order</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Info</h4>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Franchise</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Let's Connect</h4>
+      <a href="#">@dailysips</a>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        <a href="#" aria-label="TikTok"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a3.5 3.5 0 11-3-3.46V7a6.5 6.5 0 106.5 6.5V9.2a6.7 6.7 0 003.5 1V7a4 4 0 01-4-4h-3z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></a>
+        <a href="#" aria-label="WhatsApp"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M3 21l1.4-4.6A8.5 8.5 0 1112 20.5c-1.5 0-2.9-.4-4.1-1.1L3 21z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2024 Daily Sips. All rights reserved.</span>
+    <span>Made with love <span class="heart">♥</span></span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5l7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="menu-data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
